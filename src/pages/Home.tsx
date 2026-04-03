@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { ArrowRight, Users, Calendar, Heart, BookOpen, Stethoscope, GraduationCap, Globe, Star, ChevronRight } from 'lucide-react'
 import { testimonials, events, benefits, sponsors } from '@/data/seed'
 import { useInView, useCountUp } from '@/hooks/useScrollAnimation'
-import HaitianFlag from '@/components/HaitianFlag'
+
 
 /* ===== Animated Section Wrapper ===== */
 function Reveal({ children, className = '', delay = 0, direction = 'up' }: {
@@ -44,7 +44,7 @@ export default function Home() {
 
         {/* Flag */}
         <div className="flag-unfurl float" style={{ position: 'relative', zIndex: 1, perspective: '1000px' }}>
-          <HaitianFlag style={{ filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.3))' }} />
+          <img src="/haitian-flag.png" alt="Haitian Flag" style={{ maxWidth: 320, width: '100%', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.3))', borderRadius: 'var(--radius-md)' }} />
         </div>
 
         {/* Content */}
@@ -266,7 +266,7 @@ export default function Home() {
           <Reveal direction="scale">
             {/* Mini flag as framing device */}
             <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.5rem' }}>
-              <HaitianFlag style={{ maxWidth: 80, opacity: 0.8 }} />
+              <img src="/haitian-flag.png" alt="Haitian Flag" style={{ maxWidth: 80, opacity: 0.8, borderRadius: 4 }} />
             </div>
             <h2 style={{ marginBottom: '1rem' }}>Ready to Join the Network?</h2>
             <p style={{ color: 'var(--color-slate)', maxWidth: 500, margin: '0 auto 0.5rem', fontSize: '1.05rem' }}>

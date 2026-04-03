@@ -34,12 +34,10 @@ export default function Navbar() {
       }}>
         {/* Logo */}
         <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', textDecoration: 'none' }}>
-          <div style={{
+          <img src="/yhdn-logo.jpeg" alt="YHDN Logo" style={{
             width: 40, height: 40, borderRadius: '50%',
-            background: 'linear-gradient(135deg, var(--color-haiti-blue) 0%, var(--color-gold) 100%)',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            fontFamily: 'var(--font-heading)', fontWeight: 800, fontSize: '1rem', color: 'white',
-          }}>Y</div>
+            objectFit: 'cover',
+          }} />
           <div>
             <div style={{ fontFamily: 'var(--font-heading)', fontWeight: 700, fontSize: '1.1rem', color: 'white', lineHeight: 1.2 }}>YHDN</div>
             <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.5)', letterSpacing: '0.05em', textTransform: 'uppercase' }}>Young Haitian Doctors Network</div>
