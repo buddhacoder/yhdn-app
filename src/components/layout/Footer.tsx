@@ -3,7 +3,10 @@ import { Mail, Phone, Camera, Play, Heart } from 'lucide-react'
 
 export default function Footer() {
   return (
-    <footer style={{ background: 'var(--color-navy)', color: 'rgba(255,255,255,0.8)', paddingTop: '4rem' }}>
+    <footer style={{ background: 'var(--color-navy)', color: 'rgba(255,255,255,0.8)' }}>
+      {/* Haitian flag stripe */}
+      <div style={{ height: 3, background: 'linear-gradient(90deg, var(--color-haiti-blue) 0%, var(--color-haiti-blue) 50%, var(--color-haiti-red) 50%, var(--color-haiti-red) 100%)' }} />
+      <div style={{ paddingTop: '4rem' }}>
       <div className="container-narrow">
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '2.5rem', paddingBottom: '3rem' }}>
           {/* Brand */}
@@ -80,7 +83,7 @@ export default function Footer() {
             <div style={{ marginTop: '1.5rem' }}>
               <a href="https://www.zeffy.com/en-US/donation-form/donate-to-make-a-difference-6887"
                 target="_blank" rel="noopener" className="btn btn-gold btn-sm"
-                style={{ width: '100%' }}>
+                style={{ width: '100%', background: 'var(--color-haiti-red)', color: 'white', border: 'none' }}>
                 <Heart size={16} /> Donate Today
               </a>
             </div>
@@ -101,6 +104,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
+    </div>
     </footer>
   )
 }

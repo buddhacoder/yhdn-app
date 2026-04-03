@@ -361,9 +361,16 @@ a:hover {
   background: linear-gradient(
     135deg,
     var(--color-navy) 0%,
-    var(--color-navy-light) 50%,
-    var(--color-navy-medium) 100%
+    var(--color-navy-light) 40%,
+    #1a2235 70%,
+    #1f1a28 100%
   );
+}
+
+/* Haitian flag tribute stripe */
+.flag-accent {
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-haiti-blue) 0%, var(--color-haiti-blue) 50%, var(--color-haiti-red) 50%, var(--color-haiti-red) 100%);
 }
 
 /* Responsive */

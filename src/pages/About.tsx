@@ -40,7 +40,7 @@ export default function About() {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem' }}>
             {committees.map((c, i) => (
-              <div key={c.id} className="card" style={{ padding: '1.5rem' }}>
+              <div key={c.id} className="card" style={{ padding: '1.5rem', borderLeft: `3px solid ${i % 2 === 0 ? 'var(--color-haiti-blue)' : 'var(--color-haiti-red)'}` }}>
                 <h4 style={{ marginBottom: '0.5rem', fontSize: '1rem' }}>{c.name}</h4>
                 <p style={{ color: 'var(--color-slate)', fontSize: '0.85rem', lineHeight: 1.7 }}>{c.description}</p>
               </div>

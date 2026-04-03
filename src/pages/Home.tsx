@@ -9,6 +9,7 @@ export default function Home() {
       <section className="gradient-hero" style={{ minHeight: '85vh', display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at 30% 50%, rgba(43, 94, 167, 0.15) 0%, transparent 70%)' }} />
         <div style={{ position: 'absolute', top: '10%', right: '5%', width: 300, height: 300, borderRadius: '50%', background: 'radial-gradient(circle, rgba(212, 168, 67, 0.08) 0%, transparent 70%)' }} />
+        <div style={{ position: 'absolute', bottom: '15%', left: '60%', width: 250, height: 250, borderRadius: '50%', background: 'radial-gradient(circle, rgba(155, 44, 44, 0.1) 0%, transparent 70%)' }} />
         <div className="container-narrow" style={{ position: 'relative', zIndex: 1, paddingTop: '2rem', paddingBottom: '4rem' }}>
           <div style={{ maxWidth: 720 }}>
             <div className="badge badge-gold" style={{ marginBottom: '1.5rem', animation: 'fadeIn 0.6s ease' }}>
@@ -30,7 +31,7 @@ export default function Home() {
       </section>
 
       {/* ===== STATS BAR ===== */}
-      <section style={{ background: 'white', borderBottom: '1px solid rgba(0,0,0,0.05)' }}>
+      <section style={{ background: 'white', borderBottom: '1px solid rgba(0,0,0,0.05)', borderTop: '3px solid', borderImage: 'linear-gradient(90deg, var(--color-haiti-blue) 0%, var(--color-haiti-blue) 50%, var(--color-haiti-red) 50%, var(--color-haiti-red) 100%) 1' }}>
         <div className="container-narrow" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem', padding: '3rem 1.5rem' }}>
           {[
             { value: '350+', label: 'Members Strong', icon: Users },
@@ -39,7 +40,7 @@ export default function Home() {
             { value: '7', label: 'Active Committees', icon: Globe },
           ].map((stat, i) => (
             <div key={i} style={{ textAlign: 'center' }}>
-              <stat.icon size={28} style={{ color: 'var(--color-haiti-blue)', marginBottom: '0.5rem' }} />
+              <stat.icon size={28} style={{ color: i % 2 === 0 ? 'var(--color-haiti-blue)' : 'var(--color-haiti-red)', marginBottom: '0.5rem' }} />
               <div style={{ fontFamily: 'var(--font-heading)', fontSize: '2.25rem', fontWeight: 800, color: 'var(--color-navy)', lineHeight: 1 }}>{stat.value}</div>
               <div style={{ color: 'var(--color-slate)', fontSize: '0.9rem', marginTop: '0.25rem' }}>{stat.label}</div>
             </div>
@@ -201,7 +202,7 @@ export default function Home() {
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link to="/join" className="btn btn-primary btn-lg">Become a Member <ArrowRight size={18} /></Link>
             <a href="https://www.zeffy.com/en-US/donation-form/donate-to-make-a-difference-6887"
-              target="_blank" rel="noopener" className="btn btn-secondary btn-lg">
+              target="_blank" rel="noopener" className="btn btn-lg" style={{ background: 'var(--color-haiti-red)', color: 'white' }}>
               Donate Today <Heart size={16} />
             </a>
           </div>

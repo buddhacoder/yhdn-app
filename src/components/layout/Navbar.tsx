@@ -24,8 +24,10 @@ export default function Navbar() {
     <nav style={{
       position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000,
       background: 'rgba(10, 22, 40, 0.95)', backdropFilter: 'blur(12px)',
-      borderBottom: '1px solid rgba(255,255,255,0.08)',
+      borderBottom: 'none',
     }}>
+      {/* Haitian flag accent stripe */}
+      <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: 3, background: 'linear-gradient(90deg, var(--color-haiti-blue) 0%, var(--color-haiti-blue) 50%, var(--color-haiti-red) 50%, var(--color-haiti-red) 100%)' }} />
       <div className="container-narrow" style={{
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
         height: '72px',
