@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Heart, Utensils, Dumbbell, BookOpen, Globe, ArrowRight } from 'lucide-react'
+import { healthDisparities } from '@/data/seed'
 
 export default function Culture() {
   return (
@@ -88,6 +89,32 @@ export default function Culture() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Health Disparities Data */}
+      <section className="section-padding" style={{ background: 'white' }}>
+        <div className="container-narrow">
+          <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+            <h2>Why This Matters</h2>
+            <p style={{ color: 'var(--color-slate)', maxWidth: 600, margin: '0.75rem auto 0' }}>
+              Real data on health disparities affecting Haitian communities — the numbers that drive our mission.
+            </p>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem' }}>
+            {healthDisparities.slice(0, 6).map((d, i) => {
+              const colors: Record<string, string> = { population: 'var(--color-haiti-blue)', maternal: 'var(--color-haiti-red)', infectious: 'var(--color-warning)', chronic: 'var(--color-gold)', access: 'var(--color-info)', socioeconomic: 'var(--color-charcoal-light)', trauma: 'var(--color-haiti-red)' }
+              const color = colors[d.category] || 'var(--color-slate)'
+              return (
+                <div key={i} className="card" style={{ padding: '1.5rem', borderTop: `3px solid ${color}` }}>
+                  <div style={{ fontSize: '1.8rem', fontWeight: 800, fontFamily: 'var(--font-heading)', color, lineHeight: 1 }}>{d.value}</div>
+                  <div style={{ fontWeight: 600, fontSize: '0.92rem', color: 'var(--color-navy)', marginTop: '0.5rem' }}>{d.metric}</div>
+                  <div style={{ fontSize: '0.82rem', color: 'var(--color-slate)', marginTop: '0.25rem', lineHeight: 1.5 }}>{d.comparison}</div>
+                  <div style={{ fontSize: '0.72rem', color: 'var(--color-slate)', marginTop: '0.5rem', opacity: 0.6 }}>Source: {d.source}</div>
+                </div>
+              )
+            })}
           </div>
         </div>
       </section>

@@ -359,3 +359,62 @@ export const benefits = [
   { icon: 'Award', title: 'Leadership Opportunities', description: 'Take your involvement further by joining committees, shaping programs, and becoming a leader within YHDN.' },
   { icon: 'HeartHandshake', title: 'Community Impact', description: 'Make a difference by participating in healthcare initiatives that serve the Haitian population in both the U.S. and Haiti.' },
 ]
+
+// ============================================
+// ENRICHMENT DATA — Scraped via Firecrawl
+// ============================================
+
+/** NRMP 2025 Match Statistics (Source: nrmp.org) */
+export const matchData = {
+  year: 2025,
+  source: 'https://www.nrmp.org/about/news/2025/05/nrmp-releases-2025-main-residency-match-results-and-data-report-providing-in-depth-insight-into-the-largest-residency-match-in-history/',
+  totalApplicants: 52498,
+  totalPositions: 43237,
+  usMdSeniorMatchRate: 93.5,
+  usDoSeniorMatchRate: 92.6,
+  imgMatchRate: 96.8,
+  pgy1MatchRate: 79.8,
+  trends: [
+    'Record 52,498 applicants — largest Match in history',
+    'First-year positions grew to 40,041, driven by Internal Medicine',
+    'US MD senior placement rate: 97.8%',
+  ],
+}
+
+/** Haitian Health Disparities (Sources: Stanford, MN Dept of Health, CDC) */
+export const healthDisparities = [
+  { metric: 'Life Expectancy in Haiti', value: '64.1 years', comparison: 'vs 77.2 years in the Americas', source: 'MN Dept of Health', category: 'population' },
+  { metric: 'Maternal Mortality in Haiti', value: '350.4 per 100,000 live births', comparison: '2020 data', source: 'MN Dept of Health', category: 'maternal' },
+  { metric: 'TB Incidence', value: '159 per 100,000', comparison: 'vs 2.5 per 100,000 in the U.S.', source: 'MN Dept of Health', category: 'infectious' },
+  { metric: 'HIV in the Caribbean', value: '38% of new infections from Haiti', comparison: 'Highest burden in the region', source: 'MN Dept of Health', category: 'infectious' },
+  { metric: 'Noncommunicable Disease Deaths', value: '54.8%', comparison: 'Percentage of all deaths in Haiti (2021)', source: 'MN Dept of Health', category: 'chronic' },
+  { metric: 'No Annual Physical', value: '37%', comparison: 'Haitian immigrants without annual physicals', source: 'Stanford University', category: 'access' },
+  { metric: 'Health Insurance Coverage', value: '52%', comparison: 'Only 52% of Haitian immigrants insured', source: 'Stanford University', category: 'access' },
+  { metric: 'Chronic Conditions Without Care', value: '10%', comparison: 'Failed to receive care for chronic conditions', source: 'Stanford University', category: 'access' },
+  { metric: 'Income Below $10K', value: '28%', comparison: 'Of Haitian immigrant population', source: 'Stanford University', category: 'socioeconomic' },
+  { metric: 'Sexual Violence Prevalence', value: '29% women, 26% men', comparison: 'Lifetime prevalence in Haiti', source: 'MN Dept of Health', category: 'trauma' },
+]
+
+/** External Resources & Conferences (Scraped via Firecrawl) */
+export const externalResources = [
+  // Conferences
+  { id: 'ext-1', name: 'AMEC 2026 — SNMA Conference', type: 'conference', date: 'April 1–5, 2026', location: 'Pittsburgh, PA', venue: 'David L. Lawrence Convention Center', url: 'https://snma.org/page/AMEC2026', description: 'Over 3,000 pre-medical students, physicians, alumni, and healthcare professionals for workshops, networking, and the Banquet Soirée.' },
+  { id: 'ext-2', name: 'NMA Annual Convention', type: 'conference', url: 'https://www.nmanet.org/', description: 'The National Medical Association annual convention — the leading voice for Black physicians and patients.' },
+
+  // Organizations
+  { id: 'ext-3', name: 'Student National Medical Association (SNMA)', type: 'organization', url: 'https://snma.org/', description: 'The oldest and largest student-run organization focused on the needs of medical students of color.' },
+  { id: 'ext-4', name: 'CDC Global Health — Haiti', type: 'organization', url: 'https://www.cdc.gov/global-health/countries/haiti.html', description: 'CDC programs in Haiti: HIV/TB/malaria prevention, health systems strengthening, data modernization via iSantePlus.' },
+
+  // Scholarships & Financial Aid
+  { id: 'ext-5', name: 'Bold.org Immigrant Scholarships', type: 'scholarship', url: 'https://bold.org/scholarships/by-demographics/minorities/immigrants-scholarships/', description: '90+ scholarships for immigrant medical students with upcoming deadlines.' },
+  { id: 'ext-6', name: 'SGU Medical School Scholarships', type: 'scholarship', url: 'https://www.sgu.edu/school-of-medicine/blog/medical-school-scholarships-to-consider/', description: 'Military, merit-based, and need-based scholarships for Caribbean medical schools.' },
+  { id: 'ext-7', name: 'AUC Financial Aid & Scholarships', type: 'scholarship', url: 'https://www.aucmed.edu/blog/medical-school-scholarships-to-consider', description: 'Academic, leadership, and regional scholarships for Caribbean medical students.' },
+
+  // Study Resources
+  { id: 'ext-8', name: 'USMLE Step 1 Tips for Caribbean Students', type: 'study', url: 'https://www.medschoolcoach.com/usmle-step-1-tips-tricks-for-caribbean-medical-students/', description: 'Webinar with tips from SGU tutors and graduates on how to pass USMLE Step 1.' },
+  { id: 'ext-9', name: 'NRMP Match Data & Reports', type: 'data', url: 'https://www.nrmp.org/match-data/', description: 'Official NRMP reports on match outcomes, applicant qualifications, and placement statistics.' },
+
+  // Health Research
+  { id: 'ext-10', name: 'Health Status of Haitian-Americans (Stanford)', type: 'research', url: 'https://med.stanford.edu/content/dam/sm/schoolhealtheval/documents/FPierre_HaitianAmericans.pdf', description: 'Stanford research on health disparities, access barriers, and preventive care utilization in Haitian immigrant populations.' },
+  { id: 'ext-11', name: 'Clinical Brief: Caring for Haitian New Arrivals', type: 'research', url: 'https://www.health.state.mn.us/communities/rih/coe/clinical/haitianbrief.html', description: 'MN Dept of Health clinical guide covering TB, HIV, chronic diseases, mental health, and maternal care in Haitian patients.' },
+]

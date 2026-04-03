@@ -1,6 +1,21 @@
 import { Link } from 'react-router-dom'
-import { BookOpen, FileText, MessageSquare, ListChecks, Users, ArrowRight, ChevronDown, ChevronUp } from 'lucide-react'
+import { BookOpen, ListChecks, Users, ChevronDown, ChevronUp, BarChart3 } from 'lucide-react'
 import { useState } from 'react'
+import { matchData } from '@/data/seed'
+import { useInView, useCountUp } from '@/hooks/useScrollAnimation'
+
+function MatchStat({ value, label, suffix = '%' }: { value: number; label: string; suffix?: string }) {
+  const { ref, isInView } = useInView(0.3)
+  const count = useCountUp(value, 1800, isInView)
+  return (
+    <div ref={ref} style={{ textAlign: 'center' }}>
+      <div style={{ fontFamily: 'var(--font-heading)', fontSize: '2rem', fontWeight: 800, color: 'var(--color-gold)', lineHeight: 1 }}>
+        {suffix === '+' ? count.toLocaleString() : count}{suffix}
+      </div>
+      <div style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.8rem', marginTop: '0.3rem' }}>{label}</div>
+    </div>
+  )
+}
 
 const modules = [
   { stage: 'Preclinical', title: 'Building Your Foundation', color: 'var(--color-haiti-blue)', desc: 'Strong academic foundation and early clinical exposure.',
@@ -34,6 +49,26 @@ export default function Pipeline() {
           <p style={{ color: 'rgba(255,255,255,0.7)', maxWidth: 600, margin: '0.75rem auto 0', fontSize: '1.1rem' }}>
             Your guided path from medical school to residency and beyond. Built by Haitian doctors who\'ve walked this road.
           </p>
+        </div>
+      </section>
+
+      {/* NRMP Match Stats Banner */}
+      <section style={{ background: 'var(--color-navy)', borderTop: '3px solid', borderImage: 'linear-gradient(90deg, var(--color-haiti-blue) 0%, var(--color-haiti-blue) 50%, var(--color-haiti-red) 50%, var(--color-haiti-red) 100%) 1' }}>
+        <div className="container-narrow" style={{ padding: '2.5rem 1.5rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', justifyContent: 'center', marginBottom: '1.5rem' }}>
+            <BarChart3 size={18} style={{ color: 'var(--color-gold)' }} />
+            <span style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.82rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em' }}>NRMP {matchData.year} Match Data</span>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '1.5rem' }}>
+            <MatchStat value={matchData.totalApplicants} label="Total Applicants" suffix="+" />
+            <MatchStat value={matchData.usMdSeniorMatchRate} label="US MD Match Rate" />
+            <MatchStat value={matchData.usDoSeniorMatchRate} label="US DO Match Rate" />
+            <MatchStat value={matchData.pgy1MatchRate} label="Overall PGY-1 Rate" />
+            <MatchStat value={matchData.totalPositions} label="Positions Offered" suffix="+" />
+          </div>
+          <div style={{ textAlign: 'center', marginTop: '1rem' }}>
+            <a href={matchData.source} target="_blank" rel="noopener" style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.4)' }}>Source: NRMP.org</a>
+          </div>
         </div>
       </section>
 
