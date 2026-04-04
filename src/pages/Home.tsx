@@ -35,20 +35,25 @@ function StatCounter({ value, label, icon: Icon, color }: { value: number; suffi
 export default function Home() {
   return (
     <div>
-      {/* ===== SECTION 1: FLAG REVEAL HERO ===== */}
-      <section className="cinema-section gradient-hero" style={{ flexDirection: 'column', gap: '2rem', paddingTop: '5rem' }}>
-        {/* Ambient orbs */}
-        <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at 30% 50%, rgba(43, 94, 167, 0.15) 0%, transparent 70%)' }} />
-        <div style={{ position: 'absolute', top: '10%', right: '5%', width: 300, height: 300, borderRadius: '50%', background: 'radial-gradient(circle, rgba(212, 168, 67, 0.08) 0%, transparent 70%)' }} />
-        <div style={{ position: 'absolute', bottom: '15%', left: '60%', width: 250, height: 250, borderRadius: '50%', background: 'radial-gradient(circle, rgba(155, 44, 44, 0.1) 0%, transparent 70%)' }} />
+      {/* ===== SECTION 1: PHOTO HERO ===== */}
+      <section className="cinema-section" style={{
+        flexDirection: 'column', gap: '2rem', paddingTop: '5rem',
+        backgroundImage: 'url(/hero-doctors.png)', backgroundSize: 'cover', backgroundPosition: 'center top',
+        minHeight: '100vh', position: 'relative',
+      }}>
+        {/* Dark gradient overlay */}
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(10,22,40,0.82) 0%, rgba(10,22,40,0.65) 40%, rgba(10,22,40,0.85) 100%)' }} />
 
-        {/* Flag */}
-        <div className="flag-unfurl float" style={{ position: 'relative', zIndex: 1, perspective: '1000px' }}>
-          <img src="/haitian-flag.png" alt="Haitian Flag" style={{ maxWidth: 320, width: '100%', filter: 'drop-shadow(0 20px 40px rgba(0,0,0,0.3))', borderRadius: 'var(--radius-md)' }} />
-        </div>
+        {/* Warm accent orbs */}
+        <div style={{ position: 'absolute', top: '10%', right: '10%', width: 300, height: 300, borderRadius: '50%', background: 'radial-gradient(circle, rgba(212, 168, 67, 0.1) 0%, transparent 70%)' }} />
+        <div style={{ position: 'absolute', bottom: '15%', left: '5%', width: 250, height: 250, borderRadius: '50%', background: 'radial-gradient(circle, rgba(155, 44, 44, 0.08) 0%, transparent 70%)' }} />
 
         {/* Content */}
         <div style={{ position: 'relative', zIndex: 1, textAlign: 'center', maxWidth: 720 }}>
+          {/* Mini flag accent */}
+          <div className="animate-fade-in-up stagger-1" style={{ marginBottom: '1.5rem' }}>
+            <img src="/haitian-flag.png" alt="Haitian Flag" style={{ width: 56, borderRadius: 4, opacity: 0.9, boxShadow: '0 4px 12px rgba(0,0,0,0.3)' }} />
+          </div>
           <div className="badge badge-gold animate-fade-in-up stagger-1" style={{ marginBottom: '1.25rem' }}>
             <Star size={12} style={{ marginRight: 4 }} /> 350+ MEMBERS STRONG
           </div>
@@ -60,7 +65,7 @@ export default function Home() {
           <p style={{ color: 'var(--color-gold)', fontFamily: 'Georgia, serif', fontSize: '1.1rem', fontStyle: 'italic', letterSpacing: '0.08em', marginBottom: '1.5rem', opacity: 0.9 }}>
             L'Union Fait La Force
           </p>
-          <p className="animate-fade-in-up stagger-3" style={{ color: 'rgba(255,255,255,0.75)', fontSize: '1.1rem', lineHeight: 1.8, maxWidth: 600, margin: '0 auto 2rem' }}>
+          <p className="animate-fade-in-up stagger-3" style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1.1rem', lineHeight: 1.8, maxWidth: 600, margin: '0 auto 2rem' }}>
             Community, mentorship, career guidance, and culturally grounded support for Haitian medical students, residents, fellows, physicians, and allies worldwide.
           </p>
           <div className="animate-fade-in-up stagger-3" style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -79,7 +84,7 @@ export default function Home() {
       </section>
 
       {/* ===== SECTION 2: STATS COUNTER ===== */}
-      <section style={{ background: 'white', borderBottom: '1px solid rgba(0,0,0,0.05)', borderTop: '3px solid', borderImage: 'linear-gradient(90deg, var(--color-haiti-blue) 0%, var(--color-haiti-blue) 50%, var(--color-haiti-red) 50%, var(--color-haiti-red) 100%) 1' }}>
+      <section style={{ background: 'var(--color-surface)', borderBottom: '1px solid rgba(0,0,0,0.05)', borderTop: '3px solid', borderImage: 'linear-gradient(90deg, var(--color-haiti-blue) 0%, var(--color-haiti-blue) 50%, var(--color-haiti-red) 50%, var(--color-haiti-red) 100%) 1' }}>
         <div className="container-narrow" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem', padding: '3.5rem 1.5rem' }}>
           <StatCounter value={350} label="Members Strong" icon={Users} color="var(--color-haiti-blue)" />
           <StatCounter value={10} label="Events in 4 States" icon={Calendar} color="var(--color-haiti-red)" />
@@ -119,7 +124,7 @@ export default function Home() {
       </section>
 
       {/* ===== SECTION 4: ABOUT PREVIEW ===== */}
-      <section className="section-padding" style={{ background: 'white' }}>
+      <section className="section-padding" style={{ background: 'var(--color-surface)' }}>
         <div className="container-narrow" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '3rem', alignItems: 'center' }}>
           <Reveal direction="left">
             <div>
@@ -138,7 +143,7 @@ export default function Home() {
             <div style={{ background: 'var(--color-ivory)', borderRadius: 'var(--radius-2xl)', padding: '2.5rem', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem' }}>
               {benefits.slice(0, 4).map((b, i) => (
                 <Reveal key={i} delay={(i + 1) as 1 | 2 | 3 | 4} direction="scale">
-                  <div style={{ padding: '1.25rem', background: 'white', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-card)' }}>
+                  <div style={{ padding: '1.25rem', background: 'var(--color-surface)', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-card)' }}>
                     <BookOpen size={20} style={{ color: i % 2 === 0 ? 'var(--color-haiti-blue)' : 'var(--color-haiti-red)', marginBottom: '0.5rem' }} />
                     <div style={{ fontWeight: 600, fontSize: '0.85rem', color: 'var(--color-navy)' }}>{b.title}</div>
                   </div>
@@ -200,7 +205,7 @@ export default function Home() {
       </section>
 
       {/* ===== SECTION 7: TESTIMONIALS ===== */}
-      <section className="section-padding" style={{ background: 'white' }}>
+      <section className="section-padding" style={{ background: 'var(--color-surface)' }}>
         <div className="container-narrow">
           <Reveal>
             <div style={{ textAlign: 'center', marginBottom: '3rem' }}>

@@ -8,8 +8,8 @@
   --color-navy: #0A1628;
   --color-navy-light: #132240;
   --color-navy-medium: #1A2D4D;
-  --color-ivory: #FAF8F5;
-  --color-ivory-warm: #F5F0E8;
+  --color-ivory: #F7F3ED;
+  --color-ivory-warm: #EDE6DA;
   --color-charcoal: #2D3748;
   --color-charcoal-light: #4A5568;
   --color-slate: #718096;
@@ -34,8 +34,8 @@
   --color-info: #3182CE;
 
   /* Surface system */
-  --color-surface: #FFFFFF;
-  --color-surface-raised: #F7FAFC;
+  --color-surface: #FDFBF7;
+  --color-surface-raised: #F5F0E8;
   --color-surface-overlay: rgba(10, 22, 40, 0.6);
 
   /* Typography */
