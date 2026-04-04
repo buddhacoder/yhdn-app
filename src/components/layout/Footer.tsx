@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Mail, Phone, Camera, Play, Heart } from 'lucide-react'
+import { Mail, Phone, Camera, Play } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -12,12 +12,11 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
-              <div style={{
-                width: 44, height: 44, borderRadius: '50%',
-                background: 'linear-gradient(135deg, var(--color-haiti-blue) 0%, var(--color-gold) 100%)',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                fontFamily: 'var(--font-heading)', fontWeight: 800, fontSize: '1.1rem', color: 'white',
-              }}>Y</div>
+              <img 
+                src="/Yhdn Logo.png" 
+                alt="YHDN Logo" 
+                style={{ height: 44, objectFit: 'contain' }} 
+              />
               <div>
                 <div style={{ fontFamily: 'var(--font-heading)', fontWeight: 700, fontSize: '1.1rem', color: 'white' }}>YHDN</div>
                 <div style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.4)', letterSpacing: '0.05em' }}>Young Haitian Doctors Network</div>
@@ -82,9 +81,9 @@ export default function Footer() {
             </div>
             <div style={{ marginTop: '1.5rem' }}>
               <a href="https://www.zeffy.com/en-US/donation-form/donate-to-make-a-difference-6887"
-                target="_blank" rel="noopener" className="btn btn-gold btn-sm"
-                style={{ width: '100%', background: 'var(--color-haiti-red)', color: 'white', border: 'none' }}>
-                <Heart size={16} /> Donate Today
+                target="_blank" rel="noopener" className="btn btn-editorial btn-sm"
+                style={{ width: '100%' }}>
+                Donate Today
               </a>
             </div>
           </div>

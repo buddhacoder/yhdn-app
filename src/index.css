@@ -47,17 +47,17 @@
   --spacing-section: 6rem;
   --spacing-section-sm: 4rem;
 
-  /* Shadows */
-  --shadow-card: 0 1px 3px rgba(10, 22, 40, 0.08), 0 1px 2px rgba(10, 22, 40, 0.06);
-  --shadow-card-hover: 0 10px 15px -3px rgba(10, 22, 40, 0.1), 0 4px 6px rgba(10, 22, 40, 0.05);
-  --shadow-elevated: 0 20px 25px -5px rgba(10, 22, 40, 0.1), 0 8px 10px rgba(10, 22, 40, 0.04);
+  /* Shadows - removed soft AI shadows, using harsh lines */
+  --shadow-card: none;
+  --shadow-card-hover: 4px 4px 0px rgba(10, 22, 40, 0.1);
+  --shadow-elevated: none;
 
-  /* Border radius */
-  --radius-sm: 0.375rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 0.75rem;
-  --radius-xl: 1rem;
-  --radius-2xl: 1.5rem;
+  /* Border radius - flat/brutalist to break AI softness */
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 2px;
+  --radius-xl: 4px;
+  --radius-2xl: 8px;
 }
 
 /* === Base Styles === */
@@ -167,17 +167,17 @@ a:hover {
   padding: var(--spacing-section-sm) 0;
 }
 
-/* Card base */
+/* Card base - editorial brutalism */
 .card {
   background: var(--color-surface);
+  border: 1px solid rgba(10, 22, 40, 0.15);
   border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-card);
   transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s ease;
   overflow: hidden;
 }
 
 .card:hover {
-  transform: translateY(-3px) rotate(0.3deg);
+  transform: translateY(-2px);
   box-shadow: var(--shadow-card-hover);
 }
 
@@ -188,69 +188,81 @@ a:hover {
   justify-content: center;
   gap: 0.5rem;
   padding: 0.75rem 1.75rem;
-  border-radius: var(--radius-lg);
   font-family: var(--font-heading);
   font-weight: 600;
   font-size: 0.95rem;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
   cursor: pointer;
-  border: none;
-  transition: all 0.3s ease;
+  border: 1px solid transparent;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   text-decoration: none;
+}
+
+.btn-editorial {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.3);
+  color: white;
+  border-radius: 0;
+}
+
+.btn-editorial:hover {
+  background: white;
+  color: var(--color-navy);
 }
 
 .btn-primary {
   background: var(--color-haiti-blue);
   color: white;
+  border-radius: 2px;
 }
 
 .btn-primary:hover {
-  background: var(--color-haiti-blue-light);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(43, 94, 167, 0.3);
+  background: var(--color-navy);
   color: white;
 }
 
 .btn-secondary {
   background: transparent;
-  color: var(--color-haiti-blue);
-  border: 2px solid var(--color-haiti-blue);
+  color: var(--color-navy);
+  border: 1px solid var(--color-navy);
+  border-radius: 2px;
 }
 
 .btn-secondary:hover {
-  background: var(--color-haiti-blue);
+  background: var(--color-navy);
   color: white;
 }
 
 .btn-gold {
   background: var(--color-gold);
   color: var(--color-navy);
+  border-radius: 2px;
 }
 
 .btn-gold:hover {
-  background: var(--color-gold-light);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(212, 168, 67, 0.3);
+  background: var(--color-navy);
+  color: var(--color-gold);
 }
 
 .btn-white {
   background: white;
   color: var(--color-navy);
+  border-radius: 2px;
 }
 
 .btn-white:hover {
   background: var(--color-ivory);
-  transform: translateY(-1px);
 }
 
 .btn-lg {
-  padding: 1rem 2.25rem;
-  font-size: 1.05rem;
+  padding: 1.15rem 2.5rem;
+  font-size: 0.95rem;
 }
 
 .btn-sm {
   padding: 0.5rem 1.25rem;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
 }
 
 /* Badge */
@@ -510,15 +522,7 @@ a:hover {
   animation: float 4s ease-in-out infinite;
 }
 
-/* Pulse glow for CTAs */
-@keyframes pulseGlow {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(212, 168, 67, 0.4); }
-  50% { box-shadow: 0 0 20px 4px rgba(212, 168, 67, 0.2); }
-}
 
-.pulse-glow {
-  animation: pulseGlow 3s ease-in-out infinite;
-}
 
 /* Motto typing effect */
 @keyframes typeIn {
