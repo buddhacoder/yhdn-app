@@ -48,8 +48,8 @@ export default function Home() {
         <div style={{ position: 'absolute', top: '10%', right: '10%', width: 300, height: 300, borderRadius: '50%', background: 'radial-gradient(circle, rgba(212, 168, 67, 0.1) 0%, transparent 70%)' }} />
         <div style={{ position: 'absolute', bottom: '15%', left: '5%', width: 250, height: 250, borderRadius: '50%', background: 'radial-gradient(circle, rgba(155, 44, 44, 0.08) 0%, transparent 70%)' }} />
 
-        {/* Content */}
-        <div style={{ position: 'relative', zIndex: 1, textAlign: 'center', maxWidth: 720 }}>
+        {/* Content — left-aligned for editorial feel */}
+        <div style={{ position: 'relative', zIndex: 1, textAlign: 'left', maxWidth: 720, width: '100%', padding: '0 2rem' }}>
           {/* Mini flag accent */}
           <div className="animate-fade-in-up stagger-1" style={{ marginBottom: '1.5rem' }}>
             <img src="/haitian-flag.png" alt="Haitian Flag" style={{ width: 56, borderRadius: 4, opacity: 0.9, boxShadow: '0 4px 12px rgba(0,0,0,0.3)' }} />
@@ -57,21 +57,20 @@ export default function Home() {
           <div className="badge badge-gold animate-fade-in-up stagger-1" style={{ marginBottom: '1.25rem' }}>
             <Star size={12} style={{ marginRight: 4 }} /> 350+ MEMBERS STRONG
           </div>
-          <h1 className="animate-fade-in-up stagger-2" style={{ color: 'white', marginBottom: '1rem', lineHeight: 1.1 }}>
+          <h1 className="animate-fade-in-up stagger-2" style={{ fontFamily: 'var(--font-display)', color: 'white', marginBottom: '1rem', lineHeight: 1.08, fontWeight: 600 }}>
             Connecting Haitian{' '}
-            <span style={{ color: 'var(--color-gold)' }}>Excellence</span>{' '}
-            in Medicine
+            <span style={{ color: 'var(--color-gold)', fontStyle: 'italic' }}>Excellence</span>
+            <br />in Medicine
           </h1>
           <p style={{ color: 'var(--color-gold)', fontFamily: 'Georgia, serif', fontSize: '1.1rem', fontStyle: 'italic', letterSpacing: '0.08em', marginBottom: '1.5rem', opacity: 0.9 }}>
             L'Union Fait La Force
           </p>
-          <p className="animate-fade-in-up stagger-3" style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1.1rem', lineHeight: 1.8, maxWidth: 600, margin: '0 auto 2rem' }}>
+          <p className="animate-fade-in-up stagger-3" style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1.1rem', lineHeight: 1.8, maxWidth: 540, marginBottom: '2rem' }}>
             Community, mentorship, career guidance, and culturally grounded support for Haitian medical students, residents, fellows, physicians, and allies worldwide.
           </p>
-          <div className="animate-fade-in-up stagger-3" style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+          <div className="animate-fade-in-up stagger-3" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
             <Link to="/pipeline" className="btn btn-gold btn-lg pulse-glow">Get Career Help <ArrowRight size={18} /></Link>
             <Link to="/join" className="btn btn-primary btn-lg" style={{ background: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.2)', color: 'white' }}>Join the Network</Link>
-            <Link to="/resources" className="btn btn-secondary btn-lg" style={{ borderColor: 'rgba(255,255,255,0.25)', color: 'rgba(255,255,255,0.85)' }}>Explore Resources</Link>
           </div>
         </div>
 
@@ -93,22 +92,41 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== SECTION 3: PATHWAY CARDS (CINEMATIC) ===== */}
-      <section className="section-padding" style={{ background: 'var(--color-ivory)' }}>
+      {/* ===== SECTION 3: PATHWAY CARDS (ASYMMETRIC) ===== */}
+      <section className="section-padding-generous" style={{ background: 'var(--color-ivory)' }}>
         <div className="container-narrow">
           <Reveal>
-            <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-              <h2>Start Your Journey</h2>
-              <p style={{ color: 'var(--color-slate)', maxWidth: 500, margin: '0.75rem auto 0', fontSize: '1.05rem' }}>Choose your path and get personalized guidance.</p>
+            <div style={{ marginBottom: '3rem' }}>
+              <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 600 }}>Start Your Journey</h2>
+              <p style={{ color: 'var(--color-slate)', maxWidth: 500, marginTop: '0.75rem', fontSize: '1.05rem' }}>Choose your path and get personalized guidance.</p>
             </div>
           </Reveal>
+
+          {/* Featured first card */}
+          <Reveal direction="left">
+            <Link to="/pipeline" className="card" style={{
+              display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 0,
+              textDecoration: 'none', marginBottom: '1.5rem', overflow: 'hidden',
+            }}>
+              <div style={{ padding: '2.5rem', borderLeft: '4px solid var(--color-haiti-blue)' }}>
+                <GraduationCap size={36} style={{ color: 'var(--color-haiti-blue)', marginBottom: '1rem' }} />
+                <h3 style={{ marginBottom: '0.75rem', fontSize: '1.4rem' }}>I'm a Med Student</h3>
+                <p style={{ color: 'var(--color-slate)', fontSize: '0.95rem', lineHeight: 1.8, marginBottom: '1.25rem' }}>USMLE prep, mentorship connections, preclinical guidance, and a community that gets it.</p>
+                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.25rem', color: 'var(--color-haiti-blue)', fontWeight: 600, fontSize: '0.95rem' }}>
+                  Get Started <ChevronRight size={16} />
+                </span>
+              </div>
+              <div style={{ backgroundImage: 'url(/pipeline-student.png)', backgroundSize: 'cover', backgroundPosition: 'center', minHeight: 220 }} />
+            </Link>
+          </Reveal>
+
+          {/* Two smaller cards */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem' }}>
             {[
-              { title: "I'm a Med Student", desc: 'USMLE prep, mentorship connections, and preclinical guidance.', path: '/pipeline', icon: GraduationCap, color: 'var(--color-haiti-blue)' },
               { title: "I'm Applying to Residency", desc: 'ERAS tips, personal statement review, and interview preparation.', path: '/pipeline', icon: Stethoscope, color: 'var(--color-gold)' },
               { title: "I Didn't Match", desc: "Immediate support, next steps, and you're not alone in this.", path: '/didnt-match', icon: Heart, color: 'var(--color-haiti-red)' },
             ].map((card, i) => (
-              <Reveal key={i} delay={(i + 1) as 1 | 2 | 3} direction={i === 0 ? 'left' : i === 2 ? 'right' : 'up'}>
+              <Reveal key={i} delay={(i + 1) as 1 | 2} direction={i === 0 ? 'left' : 'right'}>
                 <Link to={card.path} className="card" style={{ padding: '2rem', textDecoration: 'none', display: 'block', borderLeft: `4px solid ${card.color}`, height: '100%' }}>
                   <card.icon size={32} style={{ color: card.color, marginBottom: '1rem' }} />
                   <h3 style={{ marginBottom: '0.75rem', fontSize: '1.2rem' }}>{card.title}</h3>
@@ -204,18 +222,40 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== SECTION 7: TESTIMONIALS ===== */}
-      <section className="section-padding" style={{ background: 'var(--color-surface)' }}>
+      {/* ===== SECTION 7: TESTIMONIALS (EDITORIAL) ===== */}
+      <section className="section-padding-generous" style={{ background: 'var(--color-surface)' }}>
         <div className="container-narrow">
           <Reveal>
-            <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-              <h2>Hear from Our Members</h2>
-              <p style={{ color: 'var(--color-slate)', maxWidth: 500, margin: '0.75rem auto 0' }}>Discover how YHDN has impacted the lives and careers of its members.</p>
+            <div style={{ marginBottom: '3rem' }}>
+              <h2 style={{ fontFamily: 'var(--font-display)', fontWeight: 600 }}>Hear from Our Members</h2>
+              <p style={{ color: 'var(--color-slate)', maxWidth: 500, marginTop: '0.75rem' }}>Discover how YHDN has impacted the lives and careers of its members.</p>
             </div>
           </Reveal>
+
+          {/* Oversized pull-quote (first testimonial) */}
+          {testimonials[0] && (
+            <Reveal direction="left">
+              <div style={{ marginBottom: '2.5rem', paddingLeft: '2rem', borderLeft: '4px solid var(--color-gold)' }}>
+                <p style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.3rem, 3vw, 1.8rem)', fontStyle: 'italic', color: 'var(--color-navy)', lineHeight: 1.6, marginBottom: '1.25rem', fontWeight: 400 }}>
+                  "{testimonials[0].quote.slice(0, 220)}…"
+                </p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                  <div style={{ width: 44, height: 44, borderRadius: '50%', background: 'var(--color-navy)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: 700, fontSize: '0.9rem' }}>
+                    {testimonials[0].name.charAt(0)}
+                  </div>
+                  <div>
+                    <div style={{ fontWeight: 600, fontSize: '0.95rem', color: 'var(--color-navy)' }}>{testimonials[0].name}</div>
+                    <div style={{ fontSize: '0.82rem', color: 'var(--color-slate)' }}>{testimonials[0].role}</div>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+          )}
+
+          {/* Remaining cards */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '1.5rem' }}>
-            {testimonials.slice(0, 3).map((t, i) => (
-              <Reveal key={t.id} delay={(i + 1) as 1 | 2 | 3} direction="scale">
+            {testimonials.slice(1, 3).map((t, i) => (
+              <Reveal key={t.id} delay={(i + 1) as 1 | 2} direction="scale">
                 <div className="card" style={{ padding: '2rem', borderTop: `3px solid ${i === 0 ? 'var(--color-gold)' : i === 1 ? 'var(--color-haiti-blue)' : 'var(--color-haiti-red)'}` }}>
                   <div style={{ fontSize: '2rem', color: 'var(--color-gold)', fontFamily: 'Georgia, serif', lineHeight: 1 }}>"</div>
                   <p style={{ color: 'var(--color-charcoal)', fontSize: '0.92rem', lineHeight: 1.8, marginBottom: '1.5rem', fontStyle: 'italic' }}>

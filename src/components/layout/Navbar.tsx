@@ -112,7 +112,14 @@ export default function Navbar() {
       <div className="container-narrow" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 72 }}>
         {/* Logo */}
         <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', textDecoration: 'none' }}>
-          <img src="/yhdn-logo.jpeg" alt="YHDN Logo" style={{ width: 40, height: 40, borderRadius: '50%', objectFit: 'cover' }} />
+          <div style={{ position: 'relative', width: 56, height: 56, flexShrink: 0 }}>
+            <img src="/yhdn-logo.jpeg" alt="YHDN Logo" style={{
+              width: 56, height: 56, borderRadius: '50%', objectFit: 'cover',
+              border: '2.5px solid var(--color-gold)',
+              boxShadow: '0 2px 12px rgba(212, 168, 67, 0.25)',
+              position: 'relative', zIndex: 10,
+            }} />
+          </div>
           <div>
             <div style={{ fontFamily: 'var(--font-heading)', fontWeight: 700, fontSize: '1.1rem', color: 'white', lineHeight: 1.2 }}>YHDN</div>
             <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.5)', letterSpacing: '0.05em', textTransform: 'uppercase' }}>Young Haitian Doctors Network</div>
