@@ -45,27 +45,32 @@ export default function Home() {
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(10,22,40,0.85) 0%, rgba(10,22,40,0.7) 40%, rgba(10,22,40,0.95) 100%)' }} />
 
         {/* Content — left-aligned for editorial feel */}
-        <div style={{ position: 'relative', zIndex: 1, textAlign: 'left', maxWidth: 720, width: '100%', padding: '0 2rem' }}>
-          {/* Mini flag accent */}
-          <div className="animate-fade-in-up stagger-1" style={{ marginBottom: '1.5rem' }}>
-            <img src="/haitian-flag.png" alt="Haitian Flag" style={{ width: 56, borderRadius: 2, opacity: 0.9, boxShadow: '4px 4px 0px rgba(0,0,0,0.5)' }} />
+        <div style={{ position: 'relative', zIndex: 1, textAlign: 'left', maxWidth: 1000, width: '100%', padding: '0 2rem' }}>
+          
+          {/* Deliberate Flag & Label Layout */}
+          <div className="animate-fade-in-up stagger-1" style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', marginBottom: '2rem' }}>
+            <img src="/haitian-flag.png" alt="Haitian Flag" style={{ width: 64, borderRadius: 2, boxShadow: '4px 4px 0px rgba(0,0,0,0.6)' }} />
+            <div style={{ fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--color-gold)', borderBottom: '1px solid var(--color-gold)', paddingBottom: '0.25rem' }}>
+              ✦ 350+ Members Strong
+            </div>
           </div>
-          {/* Editorial Label instead of AI badge */}
-          <div className="animate-fade-in-up stagger-1" style={{ fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--color-gold)', borderBottom: '1px solid var(--color-gold)', display: 'inline-block', paddingBottom: '0.25rem', marginBottom: '1.5rem' }}>
-            ✦ 350+ Members Strong
-          </div>
-          <h1 className="animate-fade-in-up stagger-2" style={{ fontFamily: 'var(--font-display)', color: 'white', marginBottom: '1rem', lineHeight: 1.08, fontWeight: 600 }}>
-            Connecting Haitian{' '}
-            <span style={{ color: 'var(--color-gold)', fontStyle: 'italic' }}>Excellence</span>
-            <br />in Medicine
+          
+          {/* Bold Organization Title */}
+          <h1 className="animate-fade-in-up stagger-2" style={{ fontFamily: 'var(--font-display)', color: 'white', marginBottom: '1.5rem', lineHeight: 1.05, fontWeight: 700, textTransform: 'uppercase', fontSize: 'clamp(3rem, 6.5vw, 6rem)', letterSpacing: '-0.02em', textShadow: '0 4px 24px rgba(0,0,0,0.5)' }}>
+            Young Haitian<br />
+            <span style={{ color: 'var(--color-gold)', fontStyle: 'italic', fontWeight: 400 }}>Doctors</span> Network
           </h1>
-          <p style={{ color: 'var(--color-gold)', fontFamily: 'Georgia, serif', fontSize: '1.1rem', fontStyle: 'italic', letterSpacing: '0.08em', marginBottom: '1.5rem', opacity: 0.9 }}>
-            L'Union Fait La Force
-          </p>
-          <p className="animate-fade-in-up stagger-3" style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1.1rem', lineHeight: 1.8, maxWidth: 540, marginBottom: '2rem' }}>
-            Community, mentorship, career guidance, and culturally grounded support for Haitian medical students, residents, fellows, physicians, and allies worldwide.
-          </p>
-          <div className="animate-fade-in-up stagger-3" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+          
+          <div className="animate-fade-in-up stagger-3" style={{ borderLeft: '4px solid var(--color-haiti-red)', paddingLeft: '1.5rem', marginBottom: '2.5rem', maxWidth: 640 }}>
+            <p style={{ color: 'var(--color-gold)', fontFamily: 'Georgia, serif', fontSize: '1.25rem', fontStyle: 'italic', letterSpacing: '0.05em', marginBottom: '0.75rem', opacity: 0.95 }}>
+              L'Union Fait La Force
+            </p>
+            <p style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.15rem', lineHeight: 1.7 }}>
+              Connecting Haitian Excellence in Medicine. We provide community, mentorship, and culturally grounded support for medical students, physicians, and allies worldwide.
+            </p>
+          </div>
+
+          <div className="animate-fade-in-up stagger-4" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
             <Link to="/pipeline" className="btn btn-editorial btn-lg">Get Career Help →</Link>
             <Link to="/join" className="btn btn-primary btn-lg">Join the Network</Link>
           </div>
