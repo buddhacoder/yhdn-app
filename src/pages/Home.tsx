@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Users, Calendar, Globe } from 'lucide-react'
+import { Users, Calendar, Globe, Heart } from 'lucide-react'
 import { testimonials, events, benefits, sponsors } from '@/data/seed'
 import { useInView, useCountUp } from '@/hooks/useScrollAnimation'
 

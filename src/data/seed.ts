@@ -1,4 +1,5 @@
 import { Member, Resource, Post, Event, BoardMember, Sponsor, Testimonial } from '@/types'
+import membersData from './members.json'
 
 // ============================================
 // BOARD MEMBERS — From real yhdn.org content
@@ -103,60 +104,9 @@ export const testimonials: Testimonial[] = [
 ]
 
 // ============================================
-// MEMBERS — Demo data
+// MEMBERS — Integrated from Excel Data
 // ============================================
-export const members: Member[] = [
-  {
-    id: 'm-1', name: 'Jean-Pierre Alexandre, MD', specialty: 'Internal Medicine', location: 'Miami, FL',
-    training_level: 'attending', bio: 'Board-certified internist with a focus on preventive medicine and health equity in underserved communities.', is_featured: true,
-    profile_photo_url: '', created_at: new Date().toISOString(), updated_at: new Date().toISOString(),
-  },
-  {
-    id: 'm-2', name: 'Marie-Claire Duval', specialty: 'Pediatrics', location: 'Brooklyn, NY',
-    training_level: 'resident', bio: 'PGY-2 Pediatrics resident passionate about child health and global pediatrics.', is_featured: true,
-    profile_photo_url: '', created_at: new Date().toISOString(), updated_at: new Date().toISOString(),
-  },
-  {
-    id: 'm-3', name: 'Emmanuel Toussaint, MD', specialty: 'Cardiology', location: 'Boston, MA',
-    training_level: 'fellow', bio: 'Cardiology fellow with research interests in structural heart disease and health disparities.', is_featured: true,
-    profile_photo_url: '', created_at: new Date().toISOString(), updated_at: new Date().toISOString(),
-  },
-  {
-    id: 'm-4', name: 'Fabiola Pierre-Louis', specialty: 'Family Medicine', location: 'Chicago, IL',
-    training_level: 'student', bio: 'MS3 with a passion for community health and plans to practice in underserved areas.', is_featured: false,
-    profile_photo_url: '', created_at: new Date().toISOString(), updated_at: new Date().toISOString(),
-  },
-  {
-    id: 'm-5', name: 'Marc-Antoine Belizaire, MD', specialty: 'Psychiatry', location: 'Philadelphia, PA',
-    training_level: 'attending', bio: 'Psychiatrist focused on culturally informed mental health care in the Haitian community.', is_featured: true,
-    profile_photo_url: '', created_at: new Date().toISOString(), updated_at: new Date().toISOString(),
-  },
-  {
-    id: 'm-6', name: 'Nathalie Joseph', specialty: 'Surgery', location: 'Houston, TX',
-    training_level: 'resident', bio: 'PGY-3 General Surgery resident with interest in surgical oncology and global surgery.', is_featured: false,
-    profile_photo_url: '', created_at: new Date().toISOString(), updated_at: new Date().toISOString(),
-  },
-  {
-    id: 'm-7', name: 'Reginald Charles, MD', specialty: 'Emergency Medicine', location: 'Atlanta, GA',
-    training_level: 'attending', bio: 'Emergency physician and advocate for emergency care access in rural and underserved communities.', is_featured: false,
-    profile_photo_url: '', created_at: new Date().toISOString(), updated_at: new Date().toISOString(),
-  },
-  {
-    id: 'm-8', name: 'Sabine Augustin', specialty: 'Obstetrics & Gynecology', location: 'Orlando, FL',
-    training_level: 'fellow', bio: 'MFM fellow committed to reducing maternal morbidity disparities in Black and Haitian communities.', is_featured: true,
-    profile_photo_url: '', created_at: new Date().toISOString(), updated_at: new Date().toISOString(),
-  },
-  {
-    id: 'm-9', name: 'Dieudonne Saint-Fleur', specialty: 'Neurology', location: 'Newark, NJ',
-    training_level: 'student', bio: 'MS4 applying to Neurology residency. Research focus on stroke care and prevention.', is_featured: false,
-    profile_photo_url: '', created_at: new Date().toISOString(), updated_at: new Date().toISOString(),
-  },
-  {
-    id: 'm-10', name: 'Guerline Desrosiers, MD', specialty: 'Anesthesiology', location: 'Fort Lauderdale, FL',
-    training_level: 'attending', bio: 'Anesthesiologist with a special interest in perioperative medicine and wellness advocacy.', is_featured: false,
-    profile_photo_url: '', created_at: new Date().toISOString(), updated_at: new Date().toISOString(),
-  },
-]
+export const members: Member[] = membersData as Member[]
 
 // ============================================
 // RESOURCES — From titles + contextual expansion
