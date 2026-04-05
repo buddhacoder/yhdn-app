@@ -1,6 +1,7 @@
 import { Outlet, useLocation } from 'react-router-dom'
 import Navbar from './Navbar'
 import Footer from './Footer'
+import FloatingAudio from '@/components/ui/FloatingAudio'
 import { useEffect } from 'react'
 
 export default function AppShell() {
@@ -18,6 +19,7 @@ export default function AppShell() {
       <main style={{ flex: 1, paddingTop: isAdmin ? 0 : '72px' }}>
         <Outlet />
       </main>
+      {!isAdmin && <FloatingAudio />}
       {!isAdmin && <Footer />}
     </div>
   )

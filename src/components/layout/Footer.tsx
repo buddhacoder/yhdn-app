@@ -94,18 +94,9 @@ export default function Footer() {
           borderTop: '1px solid rgba(255,255,255,0.08)', padding: '1.5rem 0',
           display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem',
         }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
-            <p style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.4)' }}>
-              © {new Date().getFullYear()} Young Haitian Doctors Network, INC. All rights reserved.
-            </p>
-            {/* Optional Audio Anthem */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(0,0,0,0.2)', padding: '0.2rem 0.5rem', borderRadius: 4, border: '1px solid rgba(255,255,255,0.05)' }}>
-              <span style={{ fontSize: '0.65rem', color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 600 }}>Anthem</span>
-              <audio controls controlsList="nodownload noplaybackrate" style={{ height: 24, maxWidth: 220, outline: 'none' }}>
-                <source src="/nou-leve-ansanm.mp3" type="audio/mpeg" />
-              </audio>
-            </div>
-          </div>
+          <p style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.4)' }}>
+            © {new Date().getFullYear()} Young Haitian Doctors Network, INC. All rights reserved.
+          </p>
           <div style={{ display: 'flex', gap: '1.5rem' }}>
             <Link to="/privacy" style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>Privacy Policy</Link>
             <Link to="/terms" style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.4)', textDecoration: 'none' }}>Terms & Conditions</Link>
