@@ -71,8 +71,30 @@ export default function Directory() {
                         <MapPin size={13} /> {m.location}
                       </span>
                     </div>
-                    <span className="badge badge-blue">{m.training_level}</span>
-                    {m.bio && <p style={{ color: 'var(--color-slate)', fontSize: '0.82rem', lineHeight: 1.6, marginTop: '0.75rem' }}>{m.bio}</p>}
+                    <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.5rem', flexWrap: 'wrap' }}>
+                      <span className="badge badge-blue">{m.training_level}</span>
+                      {m.mentorship_status === 'accepting' && (
+                        <span style={{ 
+                          background: 'rgba(34, 197, 94, 0.1)', color: '#16a34a', 
+                          padding: '0.15rem 0.6rem', borderRadius: 2, fontSize: '0.75rem', fontWeight: 700,
+                          border: '1px solid rgba(34, 197, 94, 0.3)', letterSpacing: '0.05em', textTransform: 'uppercase'
+                        }}>Accepting Mentees</span>
+                      )}
+                    </div>
+                    {m.bio && <p style={{ color: 'var(--color-slate)', fontSize: '0.85rem', lineHeight: 1.6, marginTop: '0.85rem' }}>{m.bio}</p>}
+                    
+                    {/* The "Third Door" Bypass Action */}
+                    <div style={{ marginTop: '1.25rem', paddingTop: '1.25rem', borderTop: '1px solid rgba(0,0,0,0.08)', display: 'flex', gap: '0.75rem' }}>
+                      {m.booking_url ? (
+                        <a href={m.booking_url} target="_blank" rel="noopener noreferrer" className="btn-editorial" style={{ flex: 1, textAlign: 'center', background: 'var(--color-navy)', color: 'white', padding: '0.5rem', fontSize: '0.85rem' }}>
+                          Book 15-Min Intro
+                        </a>
+                      ) : (
+                        <a href={`mailto:${m.email}`} className="btn-editorial" style={{ flex: 1, textAlign: 'center', background: 'transparent', color: 'var(--color-slate)', padding: '0.5rem', fontSize: '0.85rem' }}>
+                          Send Email
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>

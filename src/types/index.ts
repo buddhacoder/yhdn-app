@@ -12,6 +12,8 @@ export interface Member {
   website_url?: string
   contact_preference?: string
   profile_photo_url?: string
+  booking_url?: string
+  mentorship_status?: 'accepting' | 'unavailable'
   is_featured: boolean
   created_at: string
   updated_at: string

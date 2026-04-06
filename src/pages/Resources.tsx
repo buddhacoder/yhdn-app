@@ -52,10 +52,10 @@ export default function Resources() {
   return (
     <div>
       <section className="gradient-hero" style={{ padding: '8rem 0 4rem' }}>
-        <div className="container-narrow" style={{ textAlign: 'center' }}>
-          <h1 style={{ color: 'white' }}>Resource <span style={{ color: 'var(--color-gold)' }}>Library</span></h1>
-          <p style={{ color: 'rgba(255,255,255,0.7)', maxWidth: 500, margin: '0.75rem auto 0', fontSize: '1.1rem' }}>
-            Guides, external resources, scholarships, and tools to help you succeed.
+        <div className="container-narrow" style={{ textAlign: 'left', borderLeft: '4px solid var(--color-haiti-red)', paddingLeft: '2rem' }}>
+          <h1 style={{ color: 'white', textTransform: 'uppercase', letterSpacing: '0.05em' }}>High-Yield <span style={{ color: 'var(--color-gold)' }}>Strategic</span> Archives</h1>
+          <p style={{ color: 'rgba(255,255,255,0.8)', maxWidth: 700, margin: '1rem 0 0', fontSize: '1.05rem', lineHeight: 1.7 }}>
+            Stop fighting the gatekeepers. These are the visceral, unredacted blueprints our residents used to survive unmet realities, bypass standard networking, and score 260+ on the USMLE.
           </p>
         </div>
       </section>
@@ -64,16 +64,19 @@ export default function Resources() {
       <section className="section-padding" style={{ background: 'var(--color-ivory)' }}>
         <div className="container-narrow">
           <Reveal>
-            <h2 style={{ marginBottom: '1.5rem' }}>YHDN Guides & Tools</h2>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
+              <div style={{ width: 12, height: 12, background: 'var(--color-haiti-red)', borderRadius: '50%' }}></div>
+              <h2 style={{ textTransform: 'uppercase', letterSpacing: '0.05em', margin: 0 }}>Unlocked Vault Files</h2>
+            </div>
           </Reveal>
           <div className="card" style={{ padding: '1.25rem', marginBottom: '2rem' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: '1rem' }}>
               <div style={{ position: 'relative' }}>
                 <Search size={16} style={{ position: 'absolute', left: 12, top: '50%', transform: 'translateY(-50%)', color: 'var(--color-slate)' }} />
-                <input className="input" placeholder="Search resources..." value={search} onChange={e => setSearch(e.target.value)} style={{ paddingLeft: '2.5rem' }} />
+                <input className="input" placeholder="Search archives..." value={search} onChange={e => setSearch(e.target.value)} style={{ paddingLeft: '2.5rem' }} />
               </div>
               <select className="select" value={category} onChange={e => setCategory(e.target.value)} style={{ minWidth: 200 }}>
-                <option value="">All Categories</option>
+                <option value="">All Areas</option>
                 {categories.map(c => <option key={c} value={c}>{c}</option>)}
               </select>
             </div>
@@ -82,23 +85,26 @@ export default function Resources() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '1.25rem' }}>
             {filtered.map((r, i) => (
               <Reveal key={r.id} delay={Math.min(i + 1, 3) as 1 | 2 | 3}>
-                <div className="card" style={{ padding: '1.5rem', height: '100%' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '0.75rem' }}>
-                    <span className="badge badge-blue">{r.category}</span>
-                    {r.is_featured && <span className="badge badge-gold">Featured</span>}
+                <div className="card" style={{ padding: '2rem', height: '100%', background: 'var(--color-charcoal)', color: 'white', border: '1px solid rgba(255,255,255,0.1)', display: 'flex', flexDirection: 'column' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', marginBottom: '1.25rem' }}>
+                    <span style={{ fontSize: '0.7rem', color: 'var(--color-gold)', textTransform: 'uppercase', letterSpacing: '0.1em', fontWeight: 700 }}>// {r.category}</span>
+                    {r.is_featured && <span style={{ background: 'var(--color-haiti-red)', color: 'white', fontSize: '0.65rem', padding: '0.3rem 0.6rem', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 700, borderRadius: 2 }}>Classified</span>}
                   </div>
-                  <h3 style={{ fontSize: '1.05rem', marginBottom: '0.5rem' }}>{r.title}</h3>
-                  <p style={{ color: 'var(--color-slate)', fontSize: '0.88rem', lineHeight: 1.7, marginBottom: '1rem' }}>{r.description}</p>
-                  <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-                    {r.tags?.map(t => (
-                      <span key={t} style={{ padding: '0.15rem 0.5rem', borderRadius: '9999px', background: 'var(--color-ivory)', fontSize: '0.75rem', color: 'var(--color-charcoal-light)' }}>{t}</span>
-                    ))}
+                  <h3 style={{ fontSize: '1.2rem', marginBottom: '0.75rem', fontFamily: 'var(--font-heading)', lineHeight: 1.4 }}>{r.title}</h3>
+                  <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.9rem', lineHeight: 1.7, marginBottom: '1.5rem' }}>{r.description}</p>
+                  
+                  <div style={{ marginTop: 'auto' }}>
+                    <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '1.5rem' }}>
+                      {r.tags?.map(t => (
+                        <span key={t} style={{ padding: '0.2rem 0.5rem', border: '1px dotted rgba(255,255,255,0.3)', fontSize: '0.7rem', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t}</span>
+                      ))}
+                    </div>
+                    {r.source_url && (
+                      <a href={r.source_url} target="_blank" rel="noopener" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.82rem', fontWeight: 700, color: 'var(--color-ivory)', textDecoration: 'none', borderBottom: '1px solid var(--color-haiti-red)', paddingBottom: '0.2rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                        Access File <ExternalLink size={14} />
+                      </a>
+                    )}
                   </div>
-                  {r.source_url && (
-                    <a href={r.source_url} target="_blank" rel="noopener" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', marginTop: '1rem', fontSize: '0.85rem', fontWeight: 600 }}>
-                      View Resource <ExternalLink size={14} />
-                    </a>
-                  )}
                 </div>
               </Reveal>
             ))}
@@ -107,7 +113,7 @@ export default function Resources() {
           {filtered.length === 0 && (
             <div style={{ textAlign: 'center', padding: '3rem 0' }}>
               <BookOpen size={40} style={{ color: 'var(--color-slate)', marginBottom: '0.75rem', opacity: 0.4 }} />
-              <p style={{ color: 'var(--color-slate)' }}>No YHDN resources found. Try adjusting your search.</p>
+              <p style={{ color: 'var(--color-slate)' }}>No institutional archives found. Try adjusting your parameters.</p>
             </div>
           )}
         </div>
@@ -117,9 +123,9 @@ export default function Resources() {
       <section className="section-padding" style={{ background: 'white' }}>
         <div className="container-narrow">
           <Reveal>
-            <h2 style={{ marginBottom: '0.75rem' }}>External Resources & Opportunities</h2>
-            <p style={{ color: 'var(--color-slate)', marginBottom: '1.5rem' }}>
-              Curated conferences, scholarships, organizations, and research relevant to Haitian medical professionals.
+            <h2 style={{ marginBottom: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Institutional Bypass: Power & Capital</h2>
+            <p style={{ color: 'var(--color-charcoal-light)', marginBottom: '1.5rem', fontSize: '1.05rem', lineHeight: 1.6, maxWidth: 800 }}>
+              Stop playing fair. Here are the funding workarounds, high-leverage conferences, and systemic cheat codes the establishment doesn't advertise to us.
             </p>
           </Reveal>
 

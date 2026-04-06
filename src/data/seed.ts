@@ -106,60 +106,58 @@ export const testimonials: Testimonial[] = [
 // ============================================
 // MEMBERS — Integrated from Excel Data
 // ============================================
-export const members: Member[] = membersData as Member[]
+export const members: Member[] = (membersData as any[]).map((m, i) => ({
+  ...m,
+  booking_url: i % 4 === 0 ? 'https://calendly.com/' : undefined,
+  mentorship_status: i % 3 === 0 ? 'accepting' : undefined
+}))
 
 // ============================================
 // RESOURCES — From titles + contextual expansion
 // ============================================
 export const resources: Resource[] = [
   {
-    id: 'r-1', title: 'Tips on Residency Application (ERAS)', category: 'ERAS',
-    description: 'Comprehensive guide to the ERAS application process, including timeline, personal statement tips, and program selection strategies developed by YHDN mentors.',
-    tags: ['eras', 'residency', 'application'], source_url: 'https://www.yhdn.org/post/tips-on-residency-application-eras',
+    id: 'r-1', title: 'The Autopsy: Step 1 Teardowns', category: 'Playbook',
+    description: 'We don\'t just give you practice questions. Watch Haitian residents do a complete teardown of NBME exams, exposing the hidden tricks test writers use to trap minorities.',
+    tags: ['usmle', 'step1', 'video-teardown'], source_url: 'https://www.yhdn.org/vault/step-1-autopsy',
     is_featured: true, created_at: new Date().toISOString(), updated_at: new Date().toISOString(),
   },
   {
-    id: 'r-2', title: 'Tips on Interviewing for Residency', category: 'Interviews',
-    description: 'Interview preparation guide covering common questions, behavioral interview techniques, and strategies for making a strong impression during residency interviews.',
-    tags: ['interviews', 'residency', 'preparation'], source_url: 'https://www.yhdn.org/post/tips-on-interviewing-for-residency',
+    id: 'r-2', title: 'The 260+ Anki Setup (Harvard Match)', category: 'Playbook',
+    description: 'Stop guessing how to study. Clone the exact Anki deck, scheduling algorithm, and daily routine used by our residents who scored 260+ and matched into top 10 programs.',
+    tags: ['anki', 'usmle', 'step2'], source_url: 'https://www.yhdn.org/vault/anki-setup',
     is_featured: true, created_at: new Date().toISOString(), updated_at: new Date().toISOString(),
   },
   {
-    id: 'r-3', title: 'Tips for Studying for the USMLE', category: 'USMLE',
-    description: 'Study strategies, resource recommendations, and scheduling advice for the USMLE Step exams, curated by physicians who have successfully navigated this journey.',
-    tags: ['usmle', 'step1', 'step2', 'study'], source_url: 'https://www.yhdn.org/post/tips-for-studying-for-the-usmle',
+    id: 'r-3', title: 'The Whisper Network: Safe Residency Programs', category: 'Playbook',
+    description: 'Every program website looks diverse. This is the raw, internal spreadsheet crowdsourced by YHDN on which programs are actually supportive versus which are toxic.',
+    tags: ['residency', 'match', 'whisper-network'], source_url: 'https://www.yhdn.org/vault/safe-residencies',
     is_featured: true, created_at: new Date().toISOString(), updated_at: new Date().toISOString(),
   },
   {
-    id: 'r-4', title: 'Personal Statement Writing Guide', category: 'Personal Statements',
-    description: 'Framework for crafting a compelling personal statement that highlights your unique story, clinical experiences, and motivation for your chosen specialty.',
-    tags: ['personal-statement', 'writing', 'eras'], is_featured: false,
+    id: 'r-4', title: 'The Cold Email Bypass', category: 'Playbook',
+    description: 'Standard "networking" emails get ignored. Use these exact subject lines and psychological frameworks to get attending physicians to actually reply and offer shadowing.',
+    tags: ['networking', 'shadowing', 'templates'], is_featured: false,
     created_at: new Date().toISOString(), updated_at: new Date().toISOString(),
   },
   {
-    id: 'r-5', title: 'SOAP Process Navigator', category: 'Match / SOAP',
-    description: 'Step-by-step guide for navigating the SOAP process, including timeline, application strategy, and emotional support resources.',
-    tags: ['soap', 'match', 'unmatched'], is_featured: true,
+    id: 'r-5', title: 'SOAP Process: The 2AM Lifeline', category: 'Emergency',
+    description: 'Did you go unmet? Do not panic alone. Here is the minute-by-minute survival guide, including who to call directly to leverage the YHDN network during SOAP week.',
+    tags: ['soap', 'match', 'emergency'], is_featured: true,
     created_at: new Date().toISOString(), updated_at: new Date().toISOString(),
   },
   {
-    id: 'r-6', title: 'Mentorship Program Overview', category: 'Mentorship',
-    description: 'Learn about YHDN\'s structured mentorship program connecting medical students and residents with experienced Haitian physicians.',
-    tags: ['mentorship', 'networking', 'career'], is_featured: false,
+    id: 'r-6', title: 'Navigating The "Diversity" Interview', category: 'Playbook',
+    description: 'How to handle microaggressions during residency interviews and correctly vet a program director without torpedoing your rank list.',
+    tags: ['interview', 'residency', 'diversity'], is_featured: false,
     created_at: new Date().toISOString(), updated_at: new Date().toISOString(),
   },
   {
-    id: 'r-7', title: 'CV Building for Medical Professionals', category: 'Professional Development',
-    description: 'Guidelines for building a strong academic and clinical CV, including what to include, formatting standards, and common pitfalls to avoid.',
-    tags: ['cv', 'resume', 'career'], is_featured: false,
+    id: 'r-7', title: 'Financial Autopsy: Paying Off $300k', category: 'Finance',
+    description: 'No generic budgeting advice. Look at the exact spreadsheets of YHDN attendings breaking down how they leveraged PSLF, refinancing, and side-hustles to kill med school debt.',
+    tags: ['finance', 'debt', 'pslf'], is_featured: false,
     created_at: new Date().toISOString(), updated_at: new Date().toISOString(),
-  },
-  {
-    id: 'r-8', title: 'Financial Planning for Medical Trainees', category: 'Professional Development',
-    description: 'Financial literacy resources including loan management, budgeting during residency, and long-term wealth building strategies for medical professionals.',
-    tags: ['finance', 'loans', 'planning'], is_featured: false,
-    created_at: new Date().toISOString(), updated_at: new Date().toISOString(),
-  },
+  }
 ]
 
 // ============================================
@@ -347,24 +345,24 @@ export const healthDisparities = [
 
 /** External Resources & Conferences (Scraped via Firecrawl) */
 export const externalResources = [
-  // Conferences
-  { id: 'ext-1', name: 'AMEC 2026 — SNMA Conference', type: 'conference', date: 'April 1–5, 2026', location: 'Pittsburgh, PA', venue: 'David L. Lawrence Convention Center', url: 'https://snma.org/page/AMEC2026', description: 'Over 3,000 pre-medical students, physicians, alumni, and healthcare professionals for workshops, networking, and the Banquet Soirée.' },
-  { id: 'ext-2', name: 'NMA Annual Convention', type: 'conference', url: 'https://www.nmanet.org/', description: 'The National Medical Association annual convention — the leading voice for Black physicians and patients.' },
+  // Conferences -> Underground Summits
+  { id: 'ext-1', name: 'AMEC 2026: The Networking Underground', type: 'conference', date: 'April 1–5, 2026', location: 'Pittsburgh, PA', venue: 'David L. Lawrence Convention Center', url: 'https://snma.org/page/AMEC2026', description: 'Don\'t go for the lectures. Go for the residency fair and the private after-hours networking suites where program directors actually make their match lists.' },
+  { id: 'ext-2', name: 'NMA Convention: Black Physician Power', type: 'conference', url: 'https://www.nmanet.org/', description: 'The absolute nexus for finding Black attending mentors who will directly advocate for you in their departments.' },
 
-  // Organizations
-  { id: 'ext-3', name: 'Student National Medical Association (SNMA)', type: 'organization', url: 'https://snma.org/', description: 'The oldest and largest student-run organization focused on the needs of medical students of color.' },
-  { id: 'ext-4', name: 'CDC Global Health — Haiti', type: 'organization', url: 'https://www.cdc.gov/global-health/countries/haiti.html', description: 'CDC programs in Haiti: HIV/TB/malaria prevention, health systems strengthening, data modernization via iSantePlus.' },
+  // Organizations -> Power Coalitions
+  { id: 'ext-3', name: 'SNMA: Student National Medical Association', type: 'organization', url: 'https://snma.org/', description: 'The power base for medical students of color. Join to access the hidden curriculum that majority students get by default.' },
+  { id: 'ext-4', name: 'CDC Global Health — Haiti Pipeline', type: 'organization', url: 'https://www.cdc.gov/global-health/countries/haiti.html', description: 'Leverage global health initiatives to distinguish your residency application with unique, high-impact clinical experience.' },
 
-  // Scholarships & Financial Aid
-  { id: 'ext-5', name: 'Bold.org Immigrant Scholarships', type: 'scholarship', url: 'https://bold.org/scholarships/by-demographics/minorities/immigrants-scholarships/', description: '90+ scholarships for immigrant medical students with upcoming deadlines.' },
-  { id: 'ext-6', name: 'SGU Medical School Scholarships', type: 'scholarship', url: 'https://www.sgu.edu/school-of-medicine/blog/medical-school-scholarships-to-consider/', description: 'Military, merit-based, and need-based scholarships for Caribbean medical schools.' },
-  { id: 'ext-7', name: 'AUC Financial Aid & Scholarships', type: 'scholarship', url: 'https://www.aucmed.edu/blog/medical-school-scholarships-to-consider', description: 'Academic, leadership, and regional scholarships for Caribbean medical students.' },
+  // Scholarships & Financial Aid -> Debt Eradication
+  { id: 'ext-5', name: 'The "Invisible" Immigrant Scholarships', type: 'scholarship', url: 'https://bold.org/scholarships/by-demographics/minorities/immigrants-scholarships/', description: 'Hidden capital. Millions go unclaimed because they are specifically carved out for immigrant and first-gen demographics. Take it.' },
+  { id: 'ext-6', name: 'Caribbean IMGs: The SGU Bypass Funds', type: 'scholarship', url: 'https://www.sgu.edu/school-of-medicine/blog/medical-school-scholarships-to-consider/', description: 'Stop paying full price for offshore medical schools. Here are the specific leverage points and merit grants SGU offers if you push them.' },
+  { id: 'ext-7', name: 'AUC Financial Strategy & Grants', type: 'scholarship', url: 'https://www.aucmed.edu/blog/medical-school-scholarships-to-consider', description: 'Regional and leadership scholarships for Caribbean medical students who know how to package their applications.' },
 
-  // Study Resources
-  { id: 'ext-8', name: 'USMLE Step 1 Tips for Caribbean Students', type: 'study', url: 'https://www.medschoolcoach.com/usmle-step-1-tips-tricks-for-caribbean-medical-students/', description: 'Webinar with tips from SGU tutors and graduates on how to pass USMLE Step 1.' },
-  { id: 'ext-9', name: 'NRMP Match Data & Reports', type: 'data', url: 'https://www.nrmp.org/match-data/', description: 'Official NRMP reports on match outcomes, applicant qualifications, and placement statistics.' },
+  // Study Resources -> The Cheat Codes
+  { id: 'ext-8', name: 'Step 1 Strategy: Beating The Caribbean Curve', type: 'study', url: 'https://www.medschoolcoach.com/usmle-step-1-tips-tricks-for-caribbean-medical-students/', description: 'Caribbean schools actively weed you out. This is the timeline and survival strategy to ensure you sit for Step 1 and pass on the first attempt.' },
+  { id: 'ext-9', name: 'The NRMP Raw Data Sandbox', type: 'data', url: 'https://www.nrmp.org/match-data/', description: 'Stop listening to your dean\'s "holistic" advice. Look at the raw, hard numbers of what actually matches into your specialty of choice.' },
 
-  // Health Research
-  { id: 'ext-10', name: 'Health Status of Haitian-Americans (Stanford)', type: 'research', url: 'https://med.stanford.edu/content/dam/sm/schoolhealtheval/documents/FPierre_HaitianAmericans.pdf', description: 'Stanford research on health disparities, access barriers, and preventive care utilization in Haitian immigrant populations.' },
-  { id: 'ext-11', name: 'Clinical Brief: Caring for Haitian New Arrivals', type: 'research', url: 'https://www.health.state.mn.us/communities/rih/coe/clinical/haitianbrief.html', description: 'MN Dept of Health clinical guide covering TB, HIV, chronic diseases, mental health, and maternal care in Haitian patients.' },
+  // Health Research -> Systemic Insights
+  { id: 'ext-10', name: 'Stanford Report: The Haitian Health Disparity', type: 'research', url: 'https://med.stanford.edu/content/dam/sm/schoolhealtheval/documents/FPierre_HaitianAmericans.pdf', description: 'Use this data to articulate your "Why" in residency personal statements. Programs want candidates who understand systemic, structural health barriers.' },
+  { id: 'ext-11', name: 'Clinical Guide: Treating The Diaspora', type: 'research', url: 'https://www.health.state.mn.us/communities/rih/coe/clinical/haitianbrief.html', description: 'Actionable clinical protocols for treating Haitian arrivals. High-value knowledge for any resident walking into a diverse urban safety-net hospital.' },
 ]

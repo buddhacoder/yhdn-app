@@ -180,6 +180,58 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== YHDN WHATSAPP CORE (FORMERLY CALL ROOM) ===== */}
+      <section className="section-padding-generous" style={{ background: 'var(--color-charcoal)', borderTop: '2px solid var(--color-haiti-red)', borderBottom: '2px solid var(--color-haiti-red)', overflow: 'hidden' }}>
+        <div className="container-narrow">
+          <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1.2fr) minmax(0, 1fr)', gap: '4rem', alignItems: 'center' }}>
+            <Reveal direction="left">
+              <div>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
+                  <div style={{ width: 12, height: 12, background: 'var(--color-haiti-red)', borderRadius: '50%' }}></div>
+                  <div style={{ fontSize: '0.85rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'white', fontWeight: 800 }}>
+                    Live 24/7 Support Network
+                  </div>
+                </div>
+                <h2 style={{ color: 'white', marginBottom: '1.5rem', fontFamily: 'var(--font-display)', fontSize: '3.5rem', lineHeight: 1 }}>The WhatsApp Core</h2>
+                <p style={{ color: 'rgba(255,255,255,0.8)', lineHeight: 1.8, marginBottom: '1.5rem', fontSize: '1.1rem' }}>
+                  YHDN didn't start in a boardroom—it started in a WhatsApp group where Haitian doctors traded survival strategies. Today, it remains our most protected asset.
+                </p>
+                <p style={{ color: 'var(--color-gold)', lineHeight: 1.8, marginBottom: '2.5rem', fontSize: '1.1rem', fontWeight: 600 }}>
+                  Jump into our private, 24/7 channel. When standard advising fails and premed forums turn toxic, this is where you get the unredacted truth from residents who have navigated the exact same crisis.
+                </p>
+                <a href="https://chat.whatsapp.com/" target="_blank" rel="noopener" className="btn btn-lg" style={{ background: 'var(--color-haiti-red)', color: 'white', border: 'none', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 800, padding: '1rem 2rem', textDecoration: 'none', display: 'inline-block' }}>
+                  Request Group Access  →
+                </a>
+              </div>
+            </Reveal>
+            <Reveal direction="right" delay={2}>
+              <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)', padding: '2rem', display: 'flex', flexDirection: 'column', gap: '1rem', position: 'relative' }}>
+                <div style={{ position: 'absolute', top: -10, right: 20, background: 'var(--color-gold)', color: 'var(--color-navy)', fontSize: '0.7rem', fontWeight: 800, letterSpacing: '0.1em', padding: '0.2rem 0.5rem', textTransform: 'uppercase' }}>
+                  Live Ping
+                </div>
+                <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1rem', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '0.5rem' }}>// Encrypted Comms</div>
+                
+                <div style={{ background: 'rgba(255,255,255,0.05)', padding: '1rem', borderLeft: '3px solid var(--color-gold)' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
+                    <span style={{ color: 'var(--color-gold)', fontSize: '0.8rem', fontWeight: 700 }}>Anonymous_MS2</span>
+                    <span style={{ color: 'rgba(255,255,255,0.3)', fontSize: '0.75rem' }}>2:14 AM</span>
+                  </div>
+                  <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.9rem', margin: 0, lineHeight: 1.4 }}>I just failed my first NBME. 185. My advisor told me to consider a different career. I'm shaking.</p>
+                </div>
+
+                <div style={{ background: 'rgba(255,255,255,0.05)', padding: '1rem', borderLeft: '3px solid var(--color-haiti-red)' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
+                    <span style={{ color: 'var(--color-haiti-red)', fontSize: '0.8rem', fontWeight: 700 }}>Anesthesia_PGY3</span>
+                    <span style={{ color: 'rgba(255,255,255,0.3)', fontSize: '0.75rem' }}>2:17 AM</span>
+                  </div>
+                  <p style={{ color: 'white', fontSize: '0.9rem', margin: 0, lineHeight: 1.4, fontWeight: 500 }}>Ignore them immediately. I got a 183 on my first practice and matched Harvard. DM me right now, we are fixing your study schedule tonight.</p>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
       {/* ===== SECTION 5: DIRECTORY PREVIEW ===== */}
       <section className="section-padding-generous gradient-navy">
         <div className="container-narrow" style={{ textAlign: 'center' }}>
